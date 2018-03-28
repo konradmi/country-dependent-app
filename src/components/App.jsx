@@ -17,6 +17,7 @@ import homeConfig from '../configuration_country/homeConfig'
 export default class App extends PureComponent {
   static propTypes = {
     country: PropTypes.string.isRequired,
+    countryActions: PropTypes.object.isRequired,
   }
 
   componentDidMount() {

@@ -1,5 +1,6 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 const ListItemWrapper = styled.div`
   background-color: green;
@@ -17,16 +18,17 @@ const Image = styled.div`
   background-color: yellow;
 `
 
-export default class ListItem extends PureComponent {
-  render() {
-    const { label } = this.props
-    return (
-      <ListItemWrapper>
-        <Image />
-        <div>
-          {label}
-        </div>
-      </ListItemWrapper>
-    )
-  }
+const ListItem = ({ label }) => (
+  <ListItemWrapper>
+    <Image />
+    <div>
+      {label}
+    </div>
+  </ListItemWrapper>
+)
+
+ListItem.propTypes = {
+  label: PropTypes.string.isRequired,
 }
+
+export default ListItem

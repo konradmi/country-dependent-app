@@ -1,5 +1,6 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 const Menu = styled.div`
   background-color: grey;
@@ -17,20 +18,24 @@ const List = styled.div`
   background-color:  blue;
 `
 
-export default class Layout extends PureComponent {
-  render() {
-    return (
-      <div>
-        <Menu>
-          {this.props.menu()}
-        </Menu>
-        <Sidebar>
-          {this.props.sidebar()}
-        </Sidebar>
-        <List>
-          {this.props.list()}
-        </List>
-      </div>
-    )
-  }
+const Layout = ({ menu, sidebar, list }) => (
+  <div>
+    <Menu>
+      {menu()}
+    </Menu>
+    <Sidebar>
+      {sidebar()}
+    </Sidebar>
+    <List>
+      {list()}
+    </List>
+  </div>
+)
+
+Layout.propTypes = {
+  menu: PropTypes.func.isRequired,
+  sidebar: PropTypes.func.isRequired,
+  list: PropTypes.func.isRequired,
 }
+
+export default Layout
