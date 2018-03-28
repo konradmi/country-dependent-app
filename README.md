@@ -1,8 +1,8 @@
-# react-redux-boilerplate
+# country-dependent-app
 
 ## Setup
 
-Install node.js version 7
+Install node.js version 8
 
 Install yarn package manager
 
